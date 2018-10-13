@@ -9,15 +9,15 @@ dl, dd, ol, ul, figure {
 }
 
 @font-face {
-  font-family: 'Zawgyi-One';
-  src: url('/assets/fonts/Zawgyi-One.ttf');
-}
+  font-family:'MON3 Anonta 1';
+  src:local('MON3 Anonta 1'), url('/assets/fonts/mon3.ttf') format('woff'), url('/assets/fonts/mon3.ttf') format('ttf');
+  }
 
 /**
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family, Zawgyi-One;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} "MON3 Anonta 1", $base-font-family;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;

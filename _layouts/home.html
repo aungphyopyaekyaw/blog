@@ -12,7 +12,7 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <ul class="post-list">
       {%- for post in site.posts -%}
-      <li>
+      <li class="{{ post.categories }}">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
@@ -28,3 +28,14 @@ layout: default
   {%- endif -%}
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(window).on('hashchange',function(){ 
+    window.location.reload(true); 
+  });
+  var $hash = window.location.hash.substring(1);
+  if($hash) {
+    $('li:not(.'+$hash+')').hide();
+  }
+</script>
