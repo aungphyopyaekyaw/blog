@@ -34,9 +34,9 @@ async function cacheData(request) {
 }
 {% endhighlight %}
 
-နောက်တစ်ခု ရှိတာက icon ဗျ.. Android ရော iOS မှာရော application တွေအားလုံးမှာ icon ရှိတယ်လေ မဟုတ်ဘူးလား.. အဲ့ manifest မှာ ထည့်ထာတဲ့ icon ကို android ကသိပေမဲ့ iOS မှာကျ မသိဘူးဗျ။ တကယ့်ကို အူကြောင်ကြောင်တွေ အဲ့ဒီတော့ အဲ့ကောင်တွေသိအောင် `<link rel="apple-touch-icon" href="icon.png">` ဆိုပြီး css ထည့်သလိုမျိုး head မှာ ထည့်ပေးရတယ်။ status bar အတွက်ဆိုရင်လဲ Android မှာလို Theme color နဲ့မပြီးဘူး `<meta name="apple-mobile-web-app-status-bar-style" content="default">` လို့ထည့်ရမယ်ဗျ `default` ဆိုရင်တော့ အဖြူပေါ့ဗျာ.. အနက်ရောင်လိုချင်ရင်တော့ `black` နဲ့ body နဲ့အရောင်တူချင်ရတော့ `black-translucent` ဆိုပြီးထည့်ရတယ်။ဆိုပြီးထည့်ရတယ်။
+နောက်တစ်ခု ရှိတာက icon ဗျ.. Android ရော iOS မှာရော application တွေအားလုံးမှာ icon ရှိတယ်လေ မဟုတ်ဘူးလား.. အဲ့ manifest မှာ ထည့်ထာတဲ့ icon ကို android ကသိပေမဲ့ iOS မှာကျ မသိဘူးဗျ။ တကယ့်ကို အူကြောင်ကြောင်တွေ အဲ့ဒီတော့ အဲ့ကောင်တွေသိအောင် `<link rel="apple-touch-icon" href="icon.png">` ဆိုပြီး css ထည့်သလိုမျိုး head မှာ ထည့်ပေးရတယ်။ status bar အတွက်ဆိုရင်လဲ Android မှာလို Theme color နဲ့မပြီးဘူး `<meta name="apple-mobile-web-app-status-bar-style" content="default">` လို့ထည့်ရမယ်ဗျ `default` ဆိုရင်တော့ အဖြူပေါ့ဗျာ.. အနက်ရောင်လိုချင်ရင်တော့ `black` နဲ့ body နဲ့အရောင်တူချင်ရတော့ `black-translucent` ဆိုပြီးထည့်ရတယ်။
 
-ဒီလောက်ကတော့ အကြမ်းနေလောက်ပဲပေါ့ဗျာ.. နောက်ဆက်ရေးဖြစ်ရင်တော့ အပိုင်း ၂ မှာ ဘယ်လိုတည်ဆောက်မလဲဆက်ရေးတာပေါ့။ အခုတော့ example app ကို ကြည့်ချင်ရင်တော့ [pokedex.org][pokedex-link]{:target="_blank" rel="noopener"} က ကျွန်တော်အကြိုက်ဆုံးပဲဗျို့.. ကိုယ်ကြိုက်တဲ့ အကောင်ကိုသွားရှာလို့တယ်..
+ဒီလောက်ကတော့ အကြမ်းနေလောက်ပဲပေါ့ဗျာ.. နောက်ဆက်ရေးဖြစ်ရင်တော့ အပိုင်း ၂ မှာ ဘယ်လိုတည်ဆောက်မလဲဆက်ရေးတာပေါ့။ အခုတော့ example app ကို ကြည့်ချင်ရင်တော့ [pokedex.org][pokedex-link]{:target="_blank" rel="noopener"} က ကျွန်တော်အကြိုက်ဆုံးပဲဗျို့..
 
 [pwa-wiki]: https://en.wikipedia.org/wiki/Progressive_Web_Apps
 [pokedex-manifest]: https://pokedex.org/manifest.json
