@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "PWA ရဲ့အကြောင်း"
+date:   2018-10-14 10:54:12 +0630
+categories: WebTech
+---
+
+![progressive web app](/assets/img/2018-oct/pwa-general.jpg){:class="img-responsive"}
+
+PWA ရဲ့ အရှည်ကောက်ကတော့ progressive web app လို့ခေါ်ပါတယ်။ တကယ်တော့သူက ရိုးရိုး web applicatoin တစ်ခုပဲ ဖြစ်ပါတယ်.. ဒါပေမဲ့သူ့မှာ offline သုံးလို့ရခြင်း၊ notification များ push နိုင်ခြင်းနဲ့ အချို့သော hardward များကို access လုပ်နိုင်ခြင်းတို့ ပါဝင်ပါတယ်။
+
+အဓိကအချက်ကတော့ mobile device များမှာသူက အခြားသော native app များကဲ့သို့ user experiences ကောင်းမွန်ခြင်းဖြစ်ပါတယ်.. ဆိုလိုသည်မှာ pwd သည် ကော်နက်ရှင်မကောင်းသည့် နေရာများတွင်ပင် ချက်ချင်းကြည့်နိုင်ခြင်း၊ သူ့ရဲ့ response သည့် native app များကဲ့သို့ လုံ့ဝ smooth ဖြစ်နေမှာပါ။ 
+
+ဒီ pwa ရဲ့သေးစိတ် အချက်အလက်များကိုတော့ [wiki][pwa-wiki]{:target="_blank" rel="noopener"} မှာသာ သွာဖတ်ကြည့်ကြပါတော့.. ရေးရမှာပျင်းလို့ ဆက်မရေးတော့ဘူး။
+
+ဒါပေမဲ့ progressive web app ဖြစ်အောင်ဘယ်လို ရေးမလဲဆိုတာ ရှိသေးတယ်ဗျ။ သူမှာ ပထမဆုံး Web App Manifest ဆိုတဲ့ manifest.json ဖိုင်တစ်ခုပါရမယ်။ အဲ့ဒါကဘာလဲဆိုတော့ mata data တွေပါတဲ့ json ဖိုင်တစ်ဖိုင်ပဲ ဖြစ်ပါတယ်။ အဲ့ဒီမှာ app ရဲ့ icon တို့ background color တို့ name တို့ short name တို့ ဘာတို့ ညာတို့ ပါတာပေါ့ဗျာ.. ဥပမာ [ဒီ][pokedex-manifest]{:target="_blank" rel="noopener"}ကိုကြည့်..
+
+နောက်တစ်ခုရှိတာက ကိုယ့် website က https ဖြစ်ကိုဖြစ်ရမယ်။ နောက်ပြီးသူ့မှာ service worker ကို register လုပ်ထားရမယ်.. အဲ့ဒါက ဘာလဲဆိုတော့ background မှာ run ပေးမဲ့ကောင်ပေါ့ဗျာ.. network နဲ့ applicatoin ကြား proxy ပေါ့။ အဲ့ဆားဗစ်ဝေါကာက နက်ဝေါ့ခ်က request တွေကိုယူမယ် ပြီးတော့ ကျွန်တော်တို့အတွက် cache ပေးထားပေါ့.. သူက javascript ပဲဗျ example အနေနဲ့ကတော့ ဒါမျိုးပေါ့ဗျာ
+
+{% highlight javascript %}
+self.addEventListener('fetch', event => {
+    //caching for offline viewing
+    const {request} = event;
+    const url = new URL(request.url);
+    if(url.origin === location.origin) {
+        event.respondWith(cacheData(request));
+    } else {
+        event.respondWith(networkFirst(request));
+    }
+});
+async function cacheData(request) {
+    const cachedResponse = await caches.match(request);
+    return cachedResponse || fetch(request);
+}
+{% endhighlight %}
+
+နောက်တစ်ခု ရှိတာက icon ဗျ.. Android ရော iOS မှာရော application တွေအားလုံးမှာ icon ရှိတယ်လေ မဟုတ်ဘူးလား.. အဲ့ manifest မှာ ထည့်ထာတဲ့ icon ကို android ကသိပေမဲ့ iOS မှာကျ မသိဘူးဗျ။ တကယ့်ကို အူကြောင်ကြောင်တွေ အဲ့ဒီတော့ အဲ့ကောင်တွေသိအောင် `<link rel="apple-touch-icon" href="icon.png">` ဆိုပြီး css ထည့်သလိုမျိုး head မှာ ထည့်ပေးရတယ်။ status bar အတွက်ဆိုရင်လဲ Android မှာလို Theme color နဲ့မပြီးဘူး `<meta name="apple-mobile-web-app-status-bar-style" content="default">` လို့ထည့်ရမယ်ဗျ `default` ဆိုရင်တော့ အဖြူပေါ့ဗျာ.. အနက်ရောင်လိုချင်ရင်တော့ `black` နဲ့ body နဲ့အရောင်တူချင်ရတော့ `black-translucent` ဆိုပြီးထည့်ရတယ်။ဆိုပြီးထည့်ရတယ်။
+
+ဒီလောက်ကတော့ အကြမ်းနေလောက်ပဲပေါ့ဗျာ.. နောက်ဆက်ရေးဖြစ်ရင်တော့ အပိုင်း ၂ မှာ ဘယ်လိုတည်ဆောက်မလဲဆက်ရေးတာပေါ့။ အခုတော့ example app ကို ကြည့်ချင်ရင်တော့ [pokedex.org][pokedex-link]{:target="_blank" rel="noopener"} က ကျွန်တော်အကြိုက်ဆုံးပဲဗျို့.. ကိုယ်ကြိုက်တဲ့ အကောင်ကိုသွားရှာလို့တယ်..
+
+[pwa-wiki]: https://en.wikipedia.org/wiki/Progressive_Web_Apps
+[pokedex-manifest]: https://pokedex.org/manifest.json
+[pokedex-link]: https://pokedex.org
