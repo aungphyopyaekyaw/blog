@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "လုံဝမတန်တဲ့ MacBook"
+title:  "လုံ့ဝမတန်တဲ့ MacBook"
 date:   2018-12-15 12:37:12 +0630
 categories: HollyShit
 ---
