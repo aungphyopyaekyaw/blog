@@ -9,9 +9,9 @@ layout: default
 
   {{ content }}
 
-  {%- if paginator.total_pages > 1 -%}
+  {%- if site.posts.size > 0 -%}
     <ul class="post-list">
-      {%- for post in paginator.posts -%}
+      {%- for post in site.posts -%}
       <li class="{{ post.categories }}">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -24,56 +24,9 @@ layout: default
       </li>
       {%- endfor -%}
     </ul>
-
   {%- endif -%}
 
 </div>
-
-<!-- Pagination links -->
-<style>
-.pagination a, .pagination span {
-  padding: 7px 18px;
-  border: 1px solid #eee;
-  margin-left: -2px;
-  margin-right: -2px;
-  background-color: #ffffff;
-  display: inline-block;
-}
-.pagination a {    
-  &:hover {
-      background-color: #f1f1f1;
-      color: #333;
-  }
-}
-.pagination {
-  text-align: center;
-}
-</style>
-{% if paginator.total_pages > 1 %}
-<div class="pagination"> 
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-  {% else %}
-    <span>&laquo; Prev</span>
-  {% endif %}
-
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <span class="webjeda">{{ page }}</span>
-    {% elsif page == 1 %}
-      <a href="/">{{ page }}</a>
-    {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
-  {% endfor %}
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-  {% else %}
-    <span>Next &raquo;</span>
-  {% endif %}
-</div>
-{% endif %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
