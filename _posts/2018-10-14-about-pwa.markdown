@@ -3,6 +3,8 @@ layout: post
 title:  "PWA အကြောင်း"
 date:   2018-10-14 10:54:12 +0630
 categories: WebTech
+image:
+    path: /assets/img/2018-oct/pwa-general.jpg
 ---
 
 ![progressive web app](/assets/img/2018-oct/pwa-general.jpg){:class="img-responsive"}

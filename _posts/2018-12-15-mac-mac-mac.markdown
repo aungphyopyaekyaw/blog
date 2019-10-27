@@ -3,6 +3,8 @@ layout: post
 title:  "လုံ့ဝမတန်တဲ့ MacBook"
 date:   2018-12-15 12:37:12 +0630
 categories: HollyShit
+image:
+    path: /assets/img/2018-dec/apple-shit.jpeg
 ---
 
 ![apple shit](/assets/img/2018-dec/apple-shit.jpeg){:class="img-responsive"}

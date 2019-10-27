@@ -2,7 +2,9 @@
 layout: post
 title:  "DoH vs DoT"
 date:   2019-09-14 00:19:09 +0630
-categories: WebTech
+categories: DNS
+image:
+    path: /assets/img/2019-sep/dns_doh.jpg
 ---
 
 ![doh vs dot](/assets/img/2019-sep/dns_doh.jpg){:class="img-responsive"}

@@ -2,6 +2,8 @@
 layout: post
 title:  "The First Post"
 date:   2018-10-13 17:21:56 +0630
+image:
+    path: /assets/img/2018-dec/first-blog.jpg
 ---
 
 ![first blog](/assets/img/2018-dec/first-blog.jpg){:class="img-responsive"}

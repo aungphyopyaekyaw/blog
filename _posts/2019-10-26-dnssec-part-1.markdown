@@ -2,7 +2,9 @@
 layout: post
 title:  "DNSSEC အပိုင်း ၁"
 date:   2019-10-26 18:33:09 +0630
-categories: WebTech
+categories: DNS
+image:
+    path: /assets/img/2019-oct/fig3.png
 ---
 
 ![dnssec part 1](/assets/img/2019-oct/fig3.png){:class="img-responsive"}
